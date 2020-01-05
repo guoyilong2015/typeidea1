@@ -18,7 +18,7 @@ class PostInline(admin.TabularInline):
 class CategoryAdmin(BaseOwnerAdmin):
     inlines = [PostInline,]
     list_display = ('name','status','is_nav','created_time','post_count')
-    fields = ('name','status','is_nav')
+    fields = ('name','status','is_nav') #控制页面需要展示的字段
 
     def post_count(self,obj):
         return obj.post_set.count()
@@ -60,7 +60,7 @@ class PostAdmin(BaseOwnerAdmin):
     actions_on_top = True
     actions_on_bottom = True
 
-    save_on_top = True
+    save_on_top = False
 
     exclude = ('owner',)
     '''

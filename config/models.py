@@ -38,8 +38,8 @@ class SideBar(models.Model):
     STATUS_SHOW = 1
     STATUS_HIDE = 0
     STATUS_ITEMS = (
-        (STATUS_SHOW, '正常'),
-        (STATUS_HIDE, '删除'),
+        (STATUS_SHOW, '展示'),
+        (STATUS_HIDE, '隐藏'),
     )
     title = models.CharField(max_length=10, verbose_name="标题")
     display_type = models.PositiveIntegerField(default=1, choices=SIDE_TYPE, verbose_name="展示类型")
